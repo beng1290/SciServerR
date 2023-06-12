@@ -75,9 +75,9 @@ CasJobs.executeQuery <- function(sql, context="MyDB", format="dataframe") {
     }
   }else{
     taskName = CasJobs.taskName
-    unlockBinding("CasJobs.taskName", as.environment("package:SciServer"))
-    assign("CasJobs.taskName",NULL,envir=as.environment("package:SciServer"))
-    #lockBinding("CasJobs.taskName", as.environment("package:SciServer"))
+    unlockBinding("CasJobs.taskName", as.environment("package:SciServerR"))
+    assign("CasJobs.taskName",NULL,envir=as.environment("package:SciServerR"))
+    #lockBinding("CasJobs.taskName", as.environment("package:SciServerR"))
   }
 
   url=paste(Config.CasJobsRESTUri,'/contexts/',context,'/query',"?TaskName=",taskName,sep='')
