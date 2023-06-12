@@ -60,8 +60,8 @@ Authentication.getToken<-function(){
     if(file.exists(f)){
       token = readLines(f)
       if (!is.null(token) && token != ""){
-        unlockBinding("Authentication.token", as.environment("package:SciServer"))
-        assign("Authentication.token",token,envir=as.environment("package:SciServer"))
+        unlockBinding("Authentication.token", as.environment("package:SciServerR"))
+        assign("Authentication.token",token,envir=as.environment("package:SciServerR"))
         Sys.unsetenv("sciservertoken")
         Sys.setenv(sciservertoken=token)
         return(token)
@@ -97,8 +97,8 @@ Authentication.setToken<-function(token){
   if( Config.isSciServerComputeEnvironment() == TRUE){
     warning("Authentication token cannot be set to arbitary value when inside SciServer-Compute environment.")
   }else{
-    unlockBinding("Authentication.token", as.environment("package:SciServer"))
-    assign("Authentication.token",token,envir=as.environment("package:SciServer"))
+    unlockBinding("Authentication.token", as.environment("package:SciServerR"))
+    assign("Authentication.token",token,envir=as.environment("package:SciServerR"))
 
     Sys.unsetenv("sciservertoken")
     Sys.setenv(sciservertoken=token)
