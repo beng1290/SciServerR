@@ -1,4 +1,4 @@
-Package: SciServer
+Package: SciServerR
 Type: Package
 Title: Package for accessing SciServer tools.
 Version: 2.0.13
