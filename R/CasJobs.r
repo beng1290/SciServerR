@@ -275,9 +275,9 @@ CasJobs.writeFitsFileFromQuery <- function(fileName, queryString, context="MyDB"
   }else{
     taskName = "SciScript-R.CasJobs.writeFitsFileFromQuery"
   }
-  unlockBinding("CasJobs.taskName", as.environment("package:SciServer"))
-  assign("CasJobs.taskName",taskName,envir=as.environment("package:SciServer"))
-  #lockBinding("CasJobs.taskName", as.environment("package:SciServer"))
+  unlockBinding("CasJobs.taskName", as.environment("package:SciServerR"))
+  assign("CasJobs.taskName",taskName,envir=as.environment("package:SciServerR"))
+  #lockBinding("CasJobs.taskName", as.environment("package:SciServerR"))
   
   bytes = CasJobs.executeQuery(queryString, context=context, format="fits")
   theFile = file(fileName, "wb")
